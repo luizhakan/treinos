@@ -1,0 +1,6 @@
+A fetch API é utilizada para realizar requisições pra se comunicar com outras aplicações
+
+Objetos principais
+- Request - Requisição, o que leva meu pedido de informações para a aplicação
+- Response - É a resposta que a aplicação me retorna
+
