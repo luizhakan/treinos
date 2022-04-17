@@ -4,3 +4,4 @@ Objetos principais
 - Request - Requisição, o que leva meu pedido de informações para a aplicação
 - Response - É a resposta que a aplicação me retorna
 
+Usar .innerTextem vez de.innerHTML. O uso de innerText evitará a maioria dos problemas de XSS, pois codificará automaticamente o texto.
