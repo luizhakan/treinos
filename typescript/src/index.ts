@@ -148,19 +148,19 @@ showArraysItems(a2);
 
 // classes
 class User {
-    name
-    role
-    aprovado
+  name;
+  role;
+  aprovado;
 
-    constructor(name: string, role: string, aprovado: boolean){
-        this.name = name;
-        this.role = role;
-        this.aprovado = aprovado;
-    }
+  constructor(name: string, role: string, aprovado: boolean) {
+    this.name = name;
+    this.role = role;
+    this.aprovado = aprovado;
+  }
 
-    showUserName(){
-        console.log(`O nome do usuário é ${this.name}`);
-    }
+  showUserName() {
+    console.log(`O nome do usuário é ${this.name}`);
+  }
 }
 
 const usuario1 = new User("luizhakan", "admin", true);
@@ -169,22 +169,22 @@ usuario1.showUserName();
 
 // interface em classes
 interface IVeiculo {
-    marca: string
-    mostrarMarca(): void
+  marca: string;
+  mostrarMarca(): void;
 }
 
 class Carros implements IVeiculo {
-    marca
-    wheels
+  marca;
+  wheels;
 
-    constructor(marca: string, wheels: number){
-        this.marca = marca;
-        this.wheels = wheels;
-    }
+  constructor(marca: string, wheels: number) {
+    this.marca = marca;
+    this.wheels = wheels;
+  }
 
-    mostrarMarca(): void{
-        console.log(`A marca do carro é ${this.marca}`);
-    }
+  mostrarMarca(): void {
+    console.log(`A marca do carro é ${this.marca}`);
+  }
 }
 
 const impala = new Carros("Chevrolet", 4);
@@ -193,13 +193,36 @@ impala.mostrarMarca();
 // herança
 
 class SuperCarro extends Carros {
-    motor
+  motor;
 
-    constructor(marca: string, wheels: number, motor: number){
-        super(marca, wheels);
-        this.motor = motor;
-    }
+  constructor(marca: string, wheels: number, motor: number) {
+    super(marca, wheels);
+    this.motor = motor;
+  }
 }
 
 const a4 = new SuperCarro("Audi", 4, 2.0);
 console.log(a4);
+
+// decorators
+
+// constructor decorators
+function BaseParametros() {
+  return function <T extends { new (...args: any[]): {} }>(constructor: T) {
+    return class extends constructor {
+      id = Math.random();
+      createdAt = new Date();
+    };
+  };
+}
+
+@BaseParametros()
+class Pessoa {
+  name;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+const sam = new Pessoa("Sam");
+console.log(sam);
