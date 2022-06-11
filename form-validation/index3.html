@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+        form {
+  font: 1em sans-serif;
+  max-width: 320px;
+}
+
+p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width : 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
+
+    </style>
+  </head>
+  <body>
+    <form>
+      <p>
+        <fieldset>
+        <legend>Você tem carteira de motorista?</legend>
+        <abbr title="Este campo é obrigatório" aria-label="required">*</abbr>
+        <input
+          type="radio"
+          name="motorista"
+          id="r1"
+          value="sim"
+          required
+        /><label for="r1">Sim</label>
+        <input
+          type="radio"
+          name="motorista"
+          id="r2"
+          value="não"
+          required
+        /><label for="r2">Não</label>
+    </fieldset>
+            <label for="n1">Quantos anos você tem?</label>
+            <input type="number" name="idade" id="n1" min="12" max="120" step="1" pattern="\d+">
+        
+      </p>
+      <p>
+        <label for="t1">Qual sua fruta favorita?<abbr title="Este campo é obrigatório" aria-label="required">*</abbr></label>
+        <input type="text" name="frutas" id="t1" list="l1" required >
+        <datalist id="l1">
+            <option>Banana</option>
+            <option>Cereja</option>
+            <option>Maçã</option>
+            <option>Framboesa</option>
+            <option>Limão</option>
+            <option>Laranja</option>
+        </datalist>
+        </p>
+        <p>
+            <label for="t2">Digite seu endereço de email</label>
+            <input type="email" name="email" id="t2" required>
+        </p>
+        <p>
+            <label for="t3">Escreva uma curta mensagem</label>
+            <textarea name="msg" id="t2" maxlength="195" rows="5"></textarea>
+        </p>
+        <p>
+            <button>Enviar</button>
+        </p>
+    </p>
+    </form>
+  </body>
+</html>

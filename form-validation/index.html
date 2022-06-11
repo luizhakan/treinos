@@ -6,6 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Validação de Formulário</title>
+    <style>
+      input:invalid {
+        border: 2px dashed red;
+      }
+
+      input:invalid:required {
+        background-image: linear-gradient(to right, pink, lightgreen);
+      }
+
+      input:valid {
+        border: 2px solid green;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <form>
+      <label for="choose">Você prefere maçã ou manga?</label>
+      <input id="choose" name="i_like" required pattern="[Mm]açã | [Mm]anga" />
+      <button>Enviar</button>
+    </form>
+  </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      input:invalid {
+        border: 2px dashed red;
+      }
+
+      input:invalid:required {
+        background-image: linear-gradient(to right, pink, lightgreen);
+      }
+
+      input:valid {
+        border: 2px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="choose">Você prefere banana ou cereja?</label>
+        <input
+          type="text"
+          id="choose"
+          name="i_like"
+          required
+          minlength="6"
+          maxlength="6"
+        />
+      </div>
+      <div>
+        <label for="number">Quantas você quer?</label>
+        <input
+          type="number"
+          id="number"
+          name="amount"
+          value="1"
+          min="1"
+          max="10"
+        />
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
